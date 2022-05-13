@@ -8,6 +8,7 @@ authors = ["Satish Terala <satishkt@gmail.com>"]
 python = ">=3.9,<3.10"
 eth-brownie = "^1.18.1"
 fastapi = "^0.77.1"
+coloredlogs = "^15.0.1"
 
 [tool.poetry.dev-dependencies]
 
