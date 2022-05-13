@@ -1,0 +1,26 @@
+# exclude SafeMath when calculating test coverage
+# https://eth-brownie.readthedocs.io/en/v1.10.3/config.html#exclude_paths
+reports:
+  exclude_contracts:
+    - SafeMath
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.2.2
+  - OpenZeppelin/openzeppelin-contracts@4.6.0
+  - OpenZeppelin/openzeppelin-contracts-upgradeable@4.6.0
+
+compiler:
+  solc:
+    version: 0.8.12
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.2.2"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.6.0"
+      - "@openzeppelin-upgradeable=OpenZeppelin/openzeppelin-contracts-upgradeable@4.6.0"
+# automatically fetch contract sources from Etherscan
+autofetch_sources: True
+
+pytest:
+  # these settings replace the defaults when running pytest
+  gas_limit: 6721975
+  default_contract_owner: true
+  reverting_tx_gas_limit: 6721975
+  revert_traceback: true
