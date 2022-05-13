@@ -6,7 +6,7 @@ Pre-req
 
 1. Python 3.8 or above on your machine.
 
-2. Checkout the git repo locally.
+2. Clone the git repo locally.
 3. Install Poetry , instructions [here](https://python-poetry.org/docs/#installation).
 4. Inside the folder brewdao, run poetry shell, this should open new virtual env within that folder.
 5. Run poetry install to install all required python dependencies listed in pyprojec.toml
