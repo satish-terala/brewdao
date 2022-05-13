@@ -1,3 +1,10 @@
+import logging
+
+from brownie import project, accounts, network, config
+from brownie.exceptions import ProjectNotFound
+
+from brew_dao_py.src.app.settings import setup_logging
+
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = [
     'development',
     'ganache',
@@ -7,6 +14,7 @@ LOCAL_BLOCKCHAIN_ENVIRONMENTS = [
 ]
 
 setup_logging('logging.yaml')
+
 logger = logging.getLogger(__name__)
 project_path = 'tcap_contracts_brownie'
 

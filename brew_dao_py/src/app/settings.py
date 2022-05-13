@@ -8,10 +8,11 @@ import yaml
 base_location = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
+
 def setup_logging(default_path='logging.yaml', default_level=logging.INFO, env_key='LOG_CFG'):
     """
     """
-    path = os.path.join(base_location,default_path)
+    path = os.path.join(base_location, default_path)
     value = os.getenv(env_key, None)
     if value:
         path = value
