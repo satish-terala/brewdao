@@ -15,6 +15,8 @@ contract BrewDAO is BrewDAOInterface {
     address breweryOwner;
     BrewToken token;
 
+    event BrewDAOCreated(address indexed _breweryOwnerAddress, address indexed _breweryAdminAddress, string indexed _brewerySymbol);
+
     constructor(){
         daoAdmin = msg.sender;
     }
@@ -27,6 +29,7 @@ contract BrewDAO is BrewDAOInterface {
         if (_createTokens) {
             token = new BrewToken(_initialSupply, _ownerAddress, _breweryName, _brewerySymbol);
         }
+        emit BrewDAOCreated(_ownerAddress, daoAdmin, _brewerySymbol);
         return true;
     }
 
