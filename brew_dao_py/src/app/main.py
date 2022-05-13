@@ -2,9 +2,13 @@ import logging
 
 from fastapi import FastAPI
 
+from brew_dao_py.src.app import deployer
+
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
+
+app.include_router(deployer.router)
 
 
 @app.get("/")
@@ -12,6 +16,3 @@ async def root():
     logger.info("Starting the root for the fast api app.")
     return {"message": "Hello World"}
 
-
-async  def deploy_brew_token(brewery_name:str,brewery_symbol:str,initial_suppy:int):
-    pass
