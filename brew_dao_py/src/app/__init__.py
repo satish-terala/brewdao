@@ -18,7 +18,8 @@ LOCAL_BLOCKCHAIN_ENVIRONMENTS = [
 ]
 
 setup_logging('logging.yaml')
-base_gas_strategy  = LinearScalingStrategy(Wei(17597082), Wei(17597082*10), 1.1)
+base_gas_fee=875000000
+base_gas_strategy  = LinearScalingStrategy(Wei(base_gas_fee), Wei(base_gas_fee*10), 1.1)
 
 logger = logging.getLogger(__name__)
 project_path = 'brew_dao_brownie'
