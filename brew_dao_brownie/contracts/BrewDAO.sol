@@ -22,7 +22,7 @@ contract BrewDAO is BrewDAOInterface {
     }
 
 
-    function createBrewDAO(string calldata _breweryName, string calldata _brewerySymbol, uint _initialSupply, address _ownerAddress, bool _createTokens) public onlyDaoAdmin returns (bool){
+    function createBrewDAO(string calldata _breweryName, string calldata _brewerySymbol, uint _initialSupply, address _ownerAddress, bool _createTokens) public onlyDaoAdmin returns (BrewToken tokenAddress){
         breweryName = _breweryName;
         brewerySymbol = _brewerySymbol;
         breweryOwner = _ownerAddress;
@@ -30,7 +30,7 @@ contract BrewDAO is BrewDAOInterface {
             token = new BrewToken(_initialSupply, _ownerAddress, _breweryName, _brewerySymbol);
         }
         emit BrewDAOCreated(_ownerAddress, daoAdmin, _brewerySymbol);
-        return true;
+        return token;
     }
 
 

@@ -2,7 +2,7 @@ import logging
 
 from fastapi import FastAPI
 
-from brew_dao_py.src.app import deployer
+from brew_dao_py.src.app import sol_wrapper
 
 logger = logging.getLogger(__name__)
 
