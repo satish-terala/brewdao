@@ -23,3 +23,10 @@ async def create_tokens(brewery_name: str, brewery_symbol: str, init_supply: int
     token_address = contract.createBrewDAO(brewery_name, brewery_symbol, init_supply, daoOwner, create_tokens,
                                            {'from': deployer_account})
     return token_address.return_value
+
+@router.get('/contracts/brewdao/get_token_count')
+async def get_token_count(address:str)->int:
+    contract = BROWNIE_PROJECT_REFERENCE.BrewDAO[0]
+    return contract.getTokenBalance(address)
+
+

@@ -8,11 +8,10 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-app.include_router(deployer.router)
+app.include_router(sol_wrapper.router)
 
 
 @app.get("/")
 async def root():
     logger.info("Starting the root for the fast api app.")
     return {"message": "Hello World"}
-
