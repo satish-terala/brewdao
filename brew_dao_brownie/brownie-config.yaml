@@ -17,7 +17,8 @@ compiler:
       - "@openzeppelin-upgradeable=OpenZeppelin/openzeppelin-contracts-upgradeable@4.6.0"
 # automatically fetch contract sources from Etherscan
 autofetch_sources: True
-
+networks:
+  default: hardhat
 pytest:
   # these settings replace the defaults when running pytest
   gas_limit: 6721975
